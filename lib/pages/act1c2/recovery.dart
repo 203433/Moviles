@@ -1,3 +1,4 @@
+import 'package:app1/pages/act1c2/recoverypass.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -10,9 +11,9 @@ class Recovery extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         title: Text(
-          'Regístrate',
+          'Recuperar Contraseña',
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 20,
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -20,7 +21,7 @@ class Recovery extends StatelessWidget {
         leading: BackButton(
           color: Color.fromRGBO(228, 54, 99, 1),
         ),
-        leadingWidth: 80,
+        leadingWidth: 60,
         titleSpacing: -10,
         actions: [
           Padding(
@@ -51,7 +52,7 @@ class Recovery extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 22.0, right: 22, bottom: 370),
+            padding: const EdgeInsets.only(left: 22.0, right: 22, bottom: 365),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -82,7 +83,14 @@ class Recovery extends StatelessWidget {
                   "Enviar Solicitud",
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
-                onPressed: null,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RecoveryPass(),
+                    ),
+                  );
+                },
                 style: OutlinedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: const Color.fromRGBO(128, 166, 96, 1),

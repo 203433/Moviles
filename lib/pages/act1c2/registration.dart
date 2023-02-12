@@ -13,7 +13,7 @@ class Registration extends StatelessWidget {
         title: Text(
           'Regístrate',
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 20,
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -21,7 +21,7 @@ class Registration extends StatelessWidget {
         leading: BackButton(
           color: Color.fromRGBO(228, 54, 99, 1),
         ),
-        leadingWidth: 80,
+        leadingWidth: 60,
         titleSpacing: -10,
         actions: [
           Padding(
