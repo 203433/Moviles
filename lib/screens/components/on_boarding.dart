@@ -136,6 +136,7 @@ class _OnBoardingState extends State<OnBoarding> {
   }
 }
 
+// ignore: non_constant_identifier_names
 AnimatedContainer Pages({required int index, required int currentePage}) {
   return AnimatedContainer(
     // color: currentePage == index ? Colors.amber : Colors.blue,

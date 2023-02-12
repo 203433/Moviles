@@ -24,7 +24,7 @@ class View03 extends StatelessWidget {
                     child: Text("data"),
                   ),
                 ]),
-            Image.asset("assets/img.png"),
+            Image.asset("assets/images/img.png"),
             wFinal()
           ],
         ),
