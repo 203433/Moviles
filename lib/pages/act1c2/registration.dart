@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:app1/pages/act1c2/recovery.dart';
 
 class Registration extends StatelessWidget {
   const Registration({super.key});
@@ -44,7 +45,7 @@ class Registration extends StatelessWidget {
               style: TextStyle(
                   color: Color.fromRGBO(117, 117, 117, 1),
                   fontSize: 17,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.w900),
             ),
           ),
           Padding(
@@ -150,7 +151,14 @@ class Registration extends StatelessWidget {
                   "Crear Cuenta",
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
-                onPressed: null,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Recovery(),
+                    ),
+                  );
+                },
                 style: OutlinedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: const Color.fromRGBO(128, 166, 96, 1),

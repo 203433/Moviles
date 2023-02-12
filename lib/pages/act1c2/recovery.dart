@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class Registration extends StatelessWidget {
-  const Registration({super.key});
+class Recovery extends StatelessWidget {
+  const Recovery({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,103 +38,35 @@ class Registration extends StatelessWidget {
           child: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(top: 30, bottom: 48),
+            padding: const EdgeInsets.only(
+              top: 30,
+              bottom: 48,
+            ),
             child: Text(
-              "Crea una cuenta para empezar a usar la app",
+              "Ingresa  tu email para restablecer tu contraseña",
               style: TextStyle(
                   color: Color.fromRGBO(117, 117, 117, 1),
                   fontSize: 17,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.w900),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 22.0, right: 22),
+            padding: const EdgeInsets.only(left: 22.0, right: 22, bottom: 370),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                labelUp("Nombre"),
-                genericField("Nombre completo", 35),
                 labelUp("Correo electrónico"),
-                genericField("Dirección de correo electrónico", 35),
-                labelUp("Contraseña"),
-                passField("Contraseña", 5),
+                genericField("Dirección de correo", 5),
                 Padding(
-                  padding: const EdgeInsets.only(right: 5.0, left: 15),
+                  padding: const EdgeInsets.only(right: 15.0, left: 15),
                   child: Text(
-                    "La contraseña debe de contener caracteres, números y símbolos con un máximo de 6 carácteres",
+                    "Ingrese su correo electrónico registrado y le enviaremos un correo electrónico que contiene un enlace para restablecer su contraseña.",
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontSize: 12,
                       color: Color.fromRGBO(192, 192, 192, 1),
                       height: 1.5,
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
-                        child: SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: Radio(
-                              value: "radio value",
-                              groupValue: "group value",
-                              onChanged: (value) {
-                                print(value); //selected value
-                              }),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 6.0),
-                        child: Text(
-                          "Al registrarme, acepto los",
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 6.0),
-                        child: SizedBox(
-                          height: 25,
-                          child: TextButton(
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            onPressed: null,
-                            child: Text(
-                              "terminos y condiciones",
-                              style: TextStyle(
-                                color: Color.fromRGBO(142, 176, 114, 1),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text("y")
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 35),
-                  child: Row(
-                    children: <Widget>[
-                      Text("la"),
-                      SizedBox(
-                        height: 20,
-                        child: TextButton(
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.only(left: 6),
-                          ),
-                          onPressed: null,
-                          child: Text(
-                            "política de privacidad",
-                            style: TextStyle(
-                              color: Color.fromRGBO(142, 176, 114, 1),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ],
@@ -147,7 +79,7 @@ class Registration extends StatelessWidget {
               height: 60,
               child: ElevatedButton(
                 child: Text(
-                  "Crear Cuenta",
+                  "Enviar Solicitud",
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
                 onPressed: null,
@@ -163,31 +95,6 @@ class Registration extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "¿Ya tienes una cuenta?",
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-              TextButton(
-                onPressed: null,
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.only(left: 4),
-                ),
-                child: const Text(
-                  "Iniciar Sesión",
-                  style: TextStyle(
-                    color: Color.fromRGBO(231, 56, 99, 1),
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
           ),
         ],
       )),
@@ -229,38 +136,6 @@ class Registration extends StatelessWidget {
           ),
           labelStyle: const TextStyle(
             fontSize: 20,
-            color: Color.fromRGBO(192, 192, 192, 1),
-          ),
-        ),
-      ),
-    );
-  }
-
-  passField(hint, double bottomb) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: bottomb),
-      child: TextField(
-        decoration: InputDecoration(
-          suffixIcon: Icon(Icons.visibility_off),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Color.fromRGBO(192, 192, 192, 1),
-            ),
-            borderRadius: BorderRadius.circular(16.0),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Color.fromRGBO(192, 192, 192, 1),
-            ),
-            borderRadius: BorderRadius.circular(16.0),
-          ),
-          hintText: hint,
-          hintStyle: TextStyle(
-            color: Color.fromRGBO(192, 192, 192, 1),
-            fontSize: 17,
-          ),
-          labelStyle: const TextStyle(
-            fontSize: 25,
             color: Color.fromRGBO(192, 192, 192, 1),
           ),
         ),
