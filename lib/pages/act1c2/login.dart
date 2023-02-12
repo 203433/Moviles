@@ -64,6 +64,7 @@ class Login extends StatelessWidget {
                     color: Colors.white,
                   ),
                   style: OutlinedButton.styleFrom(
+                    elevation: 0,
                     backgroundColor: const Color.fromRGBO(56, 78, 159, 1),
                     textStyle: const TextStyle(
                       fontSize: 16.0,
@@ -101,6 +102,7 @@ class Login extends StatelessWidget {
                     color: Color.fromRGBO(101, 103, 110, 1),
                   ),
                   style: OutlinedButton.styleFrom(
+                    elevation: 0,
                     backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
                     textStyle: const TextStyle(
                       fontSize: 16.0,
@@ -181,7 +183,7 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
           ]),
         ),
       ),
