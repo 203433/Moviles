@@ -36,169 +36,179 @@ class Registration extends StatelessWidget {
         ],
       ),
       body: Center(
-          child: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top: 30, bottom: 48),
-            child: Text(
-              "Crea una cuenta para empezar a usar la app",
-              style: TextStyle(
-                  color: Color.fromRGBO(117, 117, 117, 1),
-                  fontSize: 17,
-                  fontWeight: FontWeight.w900),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 22.0, right: 22),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                labelUp("Nombre"),
-                genericField("Nombre completo", 35),
-                labelUp("Correo electrónico"),
-                genericField("Dirección de correo electrónico", 35),
-                labelUp("Contraseña"),
-                passField("Contraseña", 5),
-                Padding(
-                  padding: const EdgeInsets.only(right: 5.0, left: 15),
-                  child: Text(
-                    "La contraseña debe de contener caracteres, números y símbolos con un máximo de 6 carácteres",
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Color.fromRGBO(192, 192, 192, 1),
-                      height: 1.5,
-                    ),
-                  ),
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints viewportConstraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: viewportConstraints.maxHeight,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
-                        child: SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: Radio(
-                              value: "radio value",
-                              groupValue: "group value",
-                              onChanged: (value) {
-                                print(value); //selected value
-                              }),
-                        ),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30, bottom: 48),
+                      child: Text(
+                        "Crea una cuenta para empezar a usar la app",
+                        style: TextStyle(
+                            color: Color.fromRGBO(117, 117, 117, 1),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w900),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 6.0),
-                        child: Text(
-                          "Al registrarme, acepto los",
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 6.0),
-                        child: SizedBox(
-                          height: 25,
-                          child: TextButton(
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            onPressed: null,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 22.0, right: 22),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          labelUp("Nombre"),
+                          genericField("Nombre completo", 35),
+                          labelUp("Correo electrónico"),
+                          genericField("Dirección de correo electrónico", 35),
+                          labelUp("Contraseña"),
+                          passField("Contraseña", 5),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(right: 5.0, left: 15),
                             child: Text(
-                              "terminos y condiciones",
+                              "La contraseña debe de contener caracteres, números y símbolos con un máximo de 6 carácteres",
                               style: TextStyle(
-                                color: Color.fromRGBO(142, 176, 114, 1),
+                                fontSize: 12,
+                                color: Color.fromRGBO(192, 192, 192, 1),
+                                height: 1.5,
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                      Text("y")
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 35),
-                  child: Row(
-                    children: <Widget>[
-                      Text("la"),
-                      SizedBox(
-                        height: 20,
-                        child: TextButton(
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.only(left: 6),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20.0),
+                            child: Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 15.0),
+                                  child: SizedBox(
+                                    width: 20,
+                                    height: 20,
+                                    child: Radio(
+                                        value: "radio value",
+                                        groupValue: "group value",
+                                        onChanged: (value) {
+                                          print(value); //selected value
+                                        }),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 6.0),
+                                  child: Text(
+                                    "Al registrarme, acepto los",
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 6.0),
+                                  child: SizedBox(
+                                    height: 25,
+                                    child: TextButton(
+                                      style: TextButton.styleFrom(
+                                        padding: EdgeInsets.zero,
+                                      ),
+                                      onPressed: null,
+                                      child: Text(
+                                        "terminos y condiciones",
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(142, 176, 114, 1),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Text("y")
+                              ],
+                            ),
                           ),
-                          onPressed: null,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 35),
+                            child: Row(
+                              children: <Widget>[
+                                Text("la"),
+                                SizedBox(
+                                  height: 20,
+                                  child: TextButton(
+                                    style: TextButton.styleFrom(
+                                      padding: EdgeInsets.only(left: 6),
+                                    ),
+                                    onPressed: null,
+                                    child: Text(
+                                      "política de privacidad",
+                                      style: TextStyle(
+                                        color: Color.fromRGBO(142, 176, 114, 1),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 80),
+                      child: SizedBox(
+                        width: 360,
+                        height: 60,
+                        child: ElevatedButton(
                           child: Text(
-                            "política de privacidad",
-                            style: TextStyle(
-                              color: Color.fromRGBO(142, 176, 114, 1),
+                            "Crear Cuenta",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Recovery(),
+                              ),
+                            );
+                          },
+                          style: OutlinedButton.styleFrom(
+                            elevation: 0,
+                            backgroundColor:
+                                const Color.fromRGBO(128, 166, 96, 1),
+                            textStyle: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(28.0),
                             ),
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 80),
-            child: SizedBox(
-              width: 360,
-              height: 60,
-              child: ElevatedButton(
-                child: Text(
-                  "Crear Cuenta",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Recovery(),
                     ),
-                  );
-                },
-                style: OutlinedButton.styleFrom(
-                  elevation: 0,
-                  backgroundColor: const Color.fromRGBO(128, 166, 96, 1),
-                  textStyle: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(28.0),
-                  ),
+                    Text(
+                      "¿Ya tienes una cuenta?",
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: null,
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.only(left: 4),
+                      ),
+                      child: const Text(
+                        "Iniciar Sesión",
+                        style: TextStyle(
+                          color: Color.fromRGBO(231, 56, 99, 1),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "¿Ya tienes una cuenta?",
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-              TextButton(
-                onPressed: null,
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.only(left: 4),
-                ),
-                child: const Text(
-                  "Iniciar Sesión",
-                  style: TextStyle(
-                    color: Color.fromRGBO(231, 56, 99, 1),
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
-      )),
+            );
+          },
+        ),
+      ),
     );
   }
 

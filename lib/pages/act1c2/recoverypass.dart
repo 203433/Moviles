@@ -36,80 +36,95 @@ class RecoveryPass extends StatelessWidget {
         ],
       ),
       body: Center(
-          child: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 30,
-              bottom: 48,
-              left: 22,
-              right: 22,
-            ),
-            child: Text(
-              "Por seguridad, tu contraseña debe tener una longitud de entre 8 y 15 caracteres, usar mayúsculas, minúsculas, contener por lo menos un número y un carácter especial.",
-              style: TextStyle(
-                  color: Color.fromRGBO(117, 117, 117, 1),
-                  fontSize: 17,
-                  fontWeight: FontWeight.w900),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 22.0, right: 22, bottom: 185),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                labelUp("Nueva contraseña"),
-                genericField("Nueva Contraseña", 35),
-                labelUp("Confirmar nueva contraseña"),
-                genericField("Confirma tu nueva contraseña", 5),
-                Padding(
-                  padding: const EdgeInsets.only(right: 15.0, left: 15),
-                  child: Text(
-                    "Ingrese su correo electrónico registrado y le enviaremos un correo electrónico que contiene un enlace para restablecer su contraseña.",
-                    textAlign: TextAlign.justify,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Color.fromRGBO(192, 192, 192, 1),
-                      height: 1.5,
-                    ),
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints viewportConstraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: viewportConstraints.maxHeight,
                   ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 80),
-            child: SizedBox(
-              width: 360,
-              height: 60,
-              child: ElevatedButton(
-                child: Text(
-                  "Actualizar Contraseña",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Login(),
-                    ),
-                  );
-                },
-                style: OutlinedButton.styleFrom(
-                  elevation: 0,
-                  backgroundColor: const Color.fromRGBO(128, 166, 96, 1),
-                  textStyle: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(28.0),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      )),
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 30,
+                          bottom: 48,
+                          left: 22,
+                          right: 22,
+                        ),
+                        child: Text(
+                          "Por seguridad, tu contraseña debe tener una longitud de entre 8 y 15 caracteres, usar mayúsculas, minúsculas, contener por lo menos un número y un carácter especial.",
+                          style: TextStyle(
+                              color: Color.fromRGBO(117, 117, 117, 1),
+                              fontSize: 17,
+                              fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 22.0, right: 22, bottom: 185),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            labelUp("Nueva contraseña"),
+                            genericField("Nueva Contraseña", 35),
+                            labelUp("Confirmar nueva contraseña"),
+                            genericField("Confirma tu nueva contraseña", 5),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 15.0, left: 15),
+                              child: Text(
+                                "Ingrese su correo electrónico registrado y le enviaremos un correo electrónico que contiene un enlace para restablecer su contraseña.",
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color.fromRGBO(192, 192, 192, 1),
+                                  height: 1.5,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 80),
+                        child: SizedBox(
+                          width: 360,
+                          height: 60,
+                          child: ElevatedButton(
+                            child: Text(
+                              "Actualizar Contraseña",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Login(),
+                                ),
+                              );
+                            },
+                            style: OutlinedButton.styleFrom(
+                              elevation: 0,
+                              backgroundColor:
+                                  const Color.fromRGBO(128, 166, 96, 1),
+                              textStyle: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(28.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+            );
+          },
+        ),
+      ),
     );
   }
 
